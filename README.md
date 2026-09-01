@@ -39,7 +39,7 @@ User Question ──> Similarity Retriever ◄── Persistent Chroma Vector St
 3. **Embeddings**: `HuggingFaceEmbeddings` (`sentence-transformers/all-MiniLM-L6-v2`) generates 384-dimensional vector embeddings.
 4. **Vector Storage**: `Chroma` stores vectors, text, and metadata locally (`data/chroma`). Deterministic IDs prevent duplicate indexing.
 5. **Retrieval**: Cosine similarity search retrieves top-K relevant chunks for the user question.
-6. **Generation**: Groq API (`Llama 3.3` / `groq/compound`) or OpenAI API generates answers strictly grounded in the retrieved context snippets.
+6. **Generation**: Groq API (`Llama 3.3` / `openai/gpt-oss-20b`) or OpenAI API generates answers strictly grounded in the retrieved context snippets.
 7. **Citations**: Page and document citations are extracted from retrieved document metadata and rendered in the UI.
 
 ---
@@ -49,10 +49,10 @@ User Question ──> Similarity Retriever ◄── Persistent Chroma Vector St
 - **Python 3.11+**
 - **Streamlit**: Interactive chat interface.
 - **PyMuPDF (`pymupdf`)**: PDF text and page extraction.
-- **LangChain Text Splitters**: Recursive text chunking.
+- **LangChain Ecosystem**: `langchain`, `langchain-community`, `langchain-core`, `langchain-text-splitters`, `langchain-chroma`, `langchain-groq`, `langchain-openai`
 - **Sentence-Transformers (`all-MiniLM-L6-v2`)**: Local semantic text embeddings.
 - **ChromaDB**: Local persistent vector database.
-- **Groq API**: High-speed free LLM text generation (`Llama 3.3` / `groq/compound`).
+- **Groq API**: High-speed free LLM text generation (`Llama 3.3` / `openai/gpt-oss-20b`).
 - **OpenAI API**: Optional fallback LLM.
 - **python-dotenv**: Environment variable management.
 - **pytest**: Automated testing framework.
@@ -62,7 +62,7 @@ User Question ──> Similarity Retriever ◄── Persistent Chroma Vector St
 ## 5. Project Structure
 
 ```
-rag_chain/
+RAG_multidoc_assistant/
 │
 ├── app.py                  # Streamlit UI & application controller
 ├── requirements.txt        # Package dependencies
@@ -93,7 +93,7 @@ rag_chain/
 
 1. **Navigate to the Project Directory**:
    ```bash
-   cd C:\Users\ashuk\Downloads\rag_chain
+   cd C:\Users\ashuk\Downloads\RAG_multidoc_assistant
    ```
 
 2. **Create and Activate a Virtual Environment** *(recommended)*:

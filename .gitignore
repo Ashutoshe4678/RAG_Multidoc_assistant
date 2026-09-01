@@ -1,0 +1,17 @@
+# Environment variables
+.env
+
+# Vector database storage
+data/chroma/
+data/chroma_test/
+
+# Python cache & virtual environment
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Operating system files
+.DS_Store
+Thumbs.db
